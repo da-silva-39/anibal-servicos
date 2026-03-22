@@ -1,0 +1,398 @@
+@charset "UTF-8";
+@charset "utf-8";
+
+/* Card Sobre */
+/* ===== CARD SOBRE A EMPRESA ===== */
+/* Este card fica sobre o fundo azul escuro e precisa se destacar com elegância */
+
+.card-about {
+    /* Fundo branco com leve transparência para suavizar com o fundo escuro */
+    background: rgba(255, 255, 255, 0.92);
+    
+    /* Pequeno efeito de desfoque no fundo (vidro fosco) - moderno e sutil */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* Suporte para Safari */
+    
+    /* Cantos arredondados grandes e suaves */
+    border-radius: 38px;
+    
+    /* Espaçamento interno generoso para o conteúdo respirar */
+    padding: 2.8rem 3.2rem;
+    
+    /* Margem inferior para separar dos elementos seguintes */
+    margin-bottom: 3rem;
+    
+    /* Sombra complexa: 
+       - primeira: deslocamento vertical, esfumaçado, cor azulada (profundidade)
+       - segunda: borda simulada com sombra (0 0 0 1px) na cor de destaque */
+    box-shadow: 0 25px 40px -15px rgba(0, 35, 55, 0.4),
+                0 0 0 1px rgba(59, 140, 191, 0.2);
+    
+    /* Borda sutil na cor azul médio (combina com a paleta) */
+    border: 1px solid rgba(59, 140, 191, 0.25);
+    
+    /* Transição suave para todas as propriedades no hover */
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+    
+    /* Animação de entrada quando a página carrega */
+    animation: cardFadeInUp 0.9s ease-out forwards;
+    
+    /* Garantir que o conteúdo não seja cortado */
+    overflow: visible;
+    
+    /* Para garantir que o card tenha largura adequada */
+    width: 100%;
+    max-width: 1200px; /* Ajuste conforme necessário */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Efeito quando o rato passa por cima do card */
+.card-about:hover {
+    /* Leve elevação e aumento suave */
+    transform: translateY(-10px) scale(1.01);
+    
+    /* Sombra mais intensa e borda em dourado para destacar */
+    box-shadow: 0 40px 60px -18px rgba(0, 70, 100, 0.5),
+                0 0 0 2px var(--gold, #eab308);
+    
+    /* Borda muda para dourado com transparência */
+    border-color: rgba(234, 179, 8, 0.5);
+    
+    /* Fundo fica totalmente branco no hover (mais contraste) */
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Animação de entrada: fade in com movimento para cima */
+@keyframes cardFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo do primeiro parágrafo (título "Sobre a Empresa") */
+.card-about p:first-of-type {
+    /* Remove o style inline do HTML e aplica via CSS */
+    font-weight: 650; /* Um pouco mais forte */
+    font-size: 1.8rem; /* Ligeiramente maior */
+    color: #0a2e4a; /* Azul escuro combinando com a paleta */
+    margin-bottom: 0.75rem;
+    
+    /* Organização com o ícone */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Parágrafos de texto normal */
+.card-about p {
+    font-size: 1.15rem;
+    line-height: 1.6; /* Altura de linha para melhor legibilidade */
+    color: #1e3a5f; /* Azul médio escuro para o texto */
+    margin-bottom: 1.4rem;
+    font-weight: 400;
+}
+
+/* Último parágrafo não precisa de margem */
+.card-about p:last-of-type {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== LISTA DE MATERIAIS (HIGHLIGHT) ===== */
+.highlight-list {
+    /* Layout flexível com quebra de linha */
+    display: flex;
+    flex-wrap: wrap;
+    
+    /* Espaçamento entre os itens */
+    gap: 0.9rem 2rem;
+    
+    /* Margem superior para separar do texto */
+    margin-top: 2rem;
+    
+    /* Pequeno padding para alinhamento */
+    padding-top: 0.5rem;
+}
+
+/* Cada item da lista (tags) */
+.highlight-list span {
+    /* Fundo azul muito suave */
+    background: rgba(59, 140, 191, 0.08);
+    
+    /* Espaçamento interno */
+    padding: 0.5rem 1.3rem;
+    
+    /* Bordas completamente arredondadas (formato de pílula) */
+    border-radius: 60px;
+    
+    /* Tamanho do texto */
+    font-size: 1rem;
+    font-weight: 550; /* Semi-negrito */
+    
+    /* Cor do texto combinando */
+    color: #0a3a55;
+    
+    /* Para alinhar ícone e texto */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    
+    /* Borda sutil */
+    border: 1px solid rgba(59, 140, 191, 0.25);
+    
+    /* Transição suave para efeitos */
+    transition: all 0.25s ease;
+    
+    /* Sombra leve para profundidade */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    
+    /* Cursor padrão (não parece clicável, só visual) */
+    cursor: default;
+}
+
+/* Efeito hover nos itens da lista */
+.highlight-list span:hover {
+    /* Fundo muda para dourado suave */
+    background: rgba(234, 179, 8, 0.12);
+    
+    /* Borda muda para dourado */
+    border-color: var(--gold, #eab308);
+    
+    /* Pequeno movimento para cima */
+    transform: translateY(-3px);
+    
+    /* Sombra mais pronunciada */
+    box-shadow: 0 8px 15px -8px rgba(234, 179, 8, 0.4);
+}
+
+/* Ícones dentro da lista */
+.highlight-list i {
+    font-size: 1.3rem; /* Ícones ligeiramente maiores */
+    color: var(--accent, #3b8cbf); /* Azul médio - cor de destaque */
+    transition: color 0.2s ease;
+}
+
+/* Quando passa o mouse no item, o ícone também muda */
+.highlight-list span:hover i {
+    color: var(--gold, #eab308); /* Dourado no hover */
+}
+
+/* ===== AJUSTES RESPONSIVOS ===== */
+/* Para telas menores, ajustar o padding */
+@media (max-width: 768px) {
+    .card-about {
+        padding: 2rem 1.8rem;
+        border-radius: 28px;
+    }
+    
+    /* Em telas pequenas, evita o zoom da imagem de fundo, mostrando a imagem inteira */
+         .slide {
+        background-size: 100% auto; /* Largura 100%, altura proporcional */
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    
+    .card-about p:first-of-type {
+        font-size: 1.5rem;
+    }
+    
+    .card-about p {
+        font-size: 1rem;
+    }
+    
+    .highlight-list span {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+    .card-about {
+        padding: 1.5rem 1.2rem;
+        border-radius: 20px;
+    }
+    
+    .highlight-list {
+        gap: 0.6rem 1rem;
+    }
+    
+          .slide {
+        background-size: 100% auto; /* Largura 100%, altura proporcional */
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+/* ===== SUPORTE PARA FONTES/ÍCONES ===== */
+/* Caso use Phosphor Icons ou similar, garante que ícones apareçam */
+.ph {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+
+/* ---------- DIV com slideshow de fundo ---------- */
+.minha-div {
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    /* A altura será definida pelo conteúdo, mas garantimos que o fundo cubra */
+    min-height: 500px; /* Ajuste conforme necessário ou remova */
+}
+
+/* Camada de fundo (slideshow + overlay) */
+.slideshow-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Slides individuais */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.7s ease-in-out;
+    z-index: 1;
+}
+
+/* Overlay azul com vinheta (gradiente) */
+.overlay-azul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 139, 0.7) 90%);
+    pointer-events: none; /* Permite interagir com o conteúdo */
+    z-index: 2;
+}
+
+/* Camada de conteúdo (fica visível por cima) */
+.conteudo {
+    position: relative;
+    z-index: 100;
+    padding: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    background: transparent !important;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Ajustes para seções dentro do conteúdo */
+.conteudo section {
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    background: rgba(10, 26, 47, 0.6); /* Fundo semi-transparente para legibilidade */
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.conteudo h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+}
+
+.card h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--text-light);
+}
+
+/* Seções fora da div com slideshow */
+.services, .materials, .yard, .why {
+    background: transparent;
+}
+
+/* Yard específico */
+.yard .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* CTA */
+.cta {
+    background: #0a2540;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    margin: 40px 0;
+    font-family: sans-serif;
+}
+
+.cta .btn {
+    background: #1e90ff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.cta .btn:hover {
+	background-color : blue;
+	padding: 20px;
+	width: 300px;
+	transition: 1s;
+	
+	
+	
+}
+

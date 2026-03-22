@@ -1,0 +1,47 @@
+# ===== Compilação =====
+target/
+*.class
+
+# ===== Maven =====
+.mvn/
+.mvn/wrapper/maven-wrapper.jar
+
+# ===== Logs =====
+*.log
+
+# ===== IDEs =====
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# ===== Sistema =====
+.DS_Store
+Thumbs.db
+
+# ===== Arquivos temporários =====
+*.tmp
+*.swp
+
+# ===== Configurações locais (NÃO subir) =====
+.env
+application.properties
+application.yml
+
+# ===== Build =====
+*.jar
+*.war
+
+# ===== Node (se tiver frontend junto) =====
+node_modules/
+dist/
+
+# ===== Outros =====
+coverage/
