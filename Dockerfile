@@ -8,17 +8,15 @@ RUN mvn dependency:go-offline
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Estágio final (Tomcat 10 + JDK 21 – tag correta)
-FROM tomcat:10.1.21-jdk21-temurin
+# Estágio final – Tomcat 10 com JDK 21 (tag que existe)
+FROM tomcat:10-jdk21
 
 # Remove aplicação padrão do Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copia o WAR gerado como ROOT.war (aplicação principal)
+# Copia o WAR gerado como ROOT.war
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# Expor a porta padrão (Render usa 10000 externamente, mas internamente usamos 8080)
 EXPOSE 8080
 
-# Inicia o Tomcat
 CMD ["catalina.sh", "run"]
