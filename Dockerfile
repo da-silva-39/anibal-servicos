@@ -8,8 +8,8 @@ RUN mvn dependency:go-offline
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Estágio final (Tomcat 10 + JDK 21)
-FROM tomcat:10.1.21-jdk21
+# Estágio final (Tomcat 10 + JDK 21 – tag correta)
+FROM tomcat:10.1.21-jdk21-temurin
 
 # Remove aplicação padrão do Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
