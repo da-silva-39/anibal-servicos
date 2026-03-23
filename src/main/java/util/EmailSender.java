@@ -15,7 +15,7 @@ public class EmailSender {
 
     // Configurações do servidor SMTP
     private static final String SMTP_HOST = "smtp.gmail.com";
-    private static final String SMTP_PORT = "587";
+    private static final String SMTP_PORT = "465";
     private static final String USERNAME = "joseanibaldasilva39@gmail.com"; // Seu email
     private static final String PASSWORD = "smgnhtuubeerpaim"; // SENHA DE APP (sem espaços!)
     private static final String TO_EMAIL = "josedasilvaaj39@gmail.com"; // Quem recebe
